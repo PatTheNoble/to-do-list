@@ -5,19 +5,18 @@ import React, { useState } from "react";
 import { nanoid } from "nanoid";
 
 function App(props) {
-  var [tasks, setTasks] = useState([<ToDoItem name="Default To Do"/>]);
+  var [tasks, setTasks] = useState([]);
   var taskList = [];
-  if(tasks)
-  {
-      taskList = tasks.map(task => (
+  if (tasks) {
+    taskList = tasks.map(task => (
       <ToDoItem
         id={task.id}
         name={task.name}
         completed={task.completed}
         key={task.id}
+        deleteTask={deleteTask} /*Pass the "deleteTask" function to the ToDoItem. */
       />
-    )
-  );
+    ));
   }
 
   function addTask(name) {
@@ -25,10 +24,15 @@ function App(props) {
     setTasks([...tasks, newTask]);
   }
 
+  function deleteTask(id) {
+    const remainingTasks = tasks.filter(task => id !== task.id);
+    setTasks(remainingTasks);
+  }
+
   return (
     <div className="todoapp stack-large">
       <h1>To Do List</h1>
-      <Form addTask={addTask} />
+      <Form addTask={addTask} /> {/*Pass the "addTask" function to the form. */}
       <div className="filters btn-group stack-exception">
         <div className="filters btn-group stack-exception">
           <FilterButton />

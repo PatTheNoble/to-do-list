@@ -11,7 +11,7 @@ function Form(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.addTask(name);
+    props.addTask(name); //The function "addTask" is passed in as a prop from App.js
     setName("");
   }
 
@@ -29,7 +29,7 @@ function Form(props) {
         name="text"
         autoComplete="off"
         value={name}
-        onChange={handleChange}
+        onChange={handleChange} //The onchange event occurs when the value of an element has been changed.
       />
       <button type="submit" className="btn btn__primary btn__lg">
         Add
