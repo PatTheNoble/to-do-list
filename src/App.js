@@ -41,7 +41,7 @@ function App(props) {
         </div>
       </div>
       <h2 id="list-heading">
-        3 tasks remaining
+        {taskList.length} tasks remaining!
       </h2>
       <ul className="todo-list stack-large stack-exception" aria-labelledby="list-heading">
         {taskList}
