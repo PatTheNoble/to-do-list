@@ -4,23 +4,59 @@ html {
   height: 100%;
 }
 
-*{
+@keyframes spawnAnim {
+  from {left: 600px; opacity: 0.6;}
+  to {left: 0px; opacity: 1;}
+}
 
+* *:not(html){
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Helvetica, sans-serif;
+  animation-name: spawnAnim;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+h1{
+  color:rgb(61, 61, 61);
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+h2{
+  color:rgb(61, 61, 61);
+  font-weight: normal;
 }
 
 li{
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.1);
   list-style-type: none;
 }
 
-.test{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+button, input{
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: none;
+  padding: 15px 32px;
   text-align: center;
-  background:chartreuse;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
+button[aria-pressed="true"] {
+  background-color: #e4e4e4;
+}
+
+button:active{
+  background-color: #e4e4e4;
+}
+
+button:hover, input:hover{
+  background-color: #f1f1f1;
+}
 
 .todoapp {
   background: #fff;
@@ -33,3 +69,50 @@ li{
   margin-left: auto;
   margin-right: auto;
 }
+
+.todo-label
+{
+  font-size: 2rem;
+  font-weight: 0;
+}
+
+/* Custom checkbox code */
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+  margin-right: 25px;
+}
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color:#e9e9e9;
+}
+input[type=checkbox]:checked:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color:#1E80EF;
+}
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+

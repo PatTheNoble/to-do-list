@@ -17,8 +17,8 @@ function Form(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="label-wrapper">
-        <label htmlFor="new-todo-input" className="label__lg">
+      <h2>
+        <label htmlFor="new-todo-input">
           What needs to be done?
         </label>
       </h2>
@@ -29,9 +29,9 @@ function Form(props) {
         name="text"
         autoComplete="off"
         value={name}
-        onChange={handleChange} //The onchange event occurs when the value of an element has been changed.
+        onChange={handleChange} //The onChange event occurs when the value of an element has been changed.
       />
-      <button type="submit" className="btn btn__primary btn__lg">
+      <button type="submit">
         Add
       </button>
     </form>
