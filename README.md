@@ -3,10 +3,10 @@
 <h1> About this project: </h1>
 <ul>
   <li> 
-    This is my first project built with React and is one that I have done as a training exercise.
+    A simple to-do list built with React.
     <a href="https://to-do-list-kappa-five.vercel.app/"> You can try it here! </a>
   </li>
-  <li> This is purely a front end project. Your to dos will not be saved!</li>
+  <li>Please note that your tasks are not be saved. This is purely a learning exercise and not a functional app.</li>
 </ul>
 
 <h1> Learning outcomes: </h1>
@@ -20,6 +20,3 @@
     <li> Editing a to do item from the to do list and displaying the updated result. </li>
     <li> Highlighting <b>only</b> the currently active filter. </li>
 </ul>
-<p> 
-  Overall, creating a to do list in React is a great learning exercise, you might learn <b>a lot</b> more than you expect. 
-</p>
